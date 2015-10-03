@@ -11,6 +11,7 @@ set expandtab
 set nu
 set ignorecase
 set smartcase
+set switchbuf+=usetab,newtab
 colorscheme evening
 
 " Pathogen load
@@ -21,31 +22,22 @@ call pathogen#helptags()
 "
 filetype plugin indent on
 
-"autocmd VimEnter * NERDTree
-"autocmd VimEnter * NERDTreeTabsOpen
-"autocmd BufEnter * NERDTreeMirror
 autocmd VimEnter * wincmd w
 let g:nerdtree_tabs_open_on_console_startup=1
-"let g:nerdtree_tabs_smart_startup_focus=1
+let g:nerdtree_tabs_no_startup_for_diff = 1
+let g:nerdtree_tabs_smart_startup_focus=1
+let g:nerdtree_tabs_focus_on_files = 1
+
+let NERDTreeMapOpenInTab='<CR>'
 let NERDTreeShowHidden=1
 
-"
-"" CTRL-X and SHIFT-Del are Cut
-"vnoremap <C-X> "+x
-"vnoremap <S-Del> "+x
-"
-"" CTRL-C and CTRL-Insert are Copy
-"vnoremap <C-C> "+y
-"vnoremap <C-Insert> "+y
-"
-"" CTRL-V and SHIFT-Insert are Paste
-"map <C-V>       "+gP
-"map <S-Insert>      "+gP
-
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_open_new_file = 't'
+let g:ctrlp_open_multiple_files = 'tj'
 
 map <F4> :echo 'Current time is ' . strftime('%c')<Cr>
 vnoremap > >gv
 vnoremap < <gv
 
-
 syntax on
+
