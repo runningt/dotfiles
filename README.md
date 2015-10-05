@@ -15,7 +15,6 @@ My personal dotfiles. I heve created it to remember my settings, especially vim 
             cd <some_directory>
             git submodule init
             git submodule update
-
 Note: submodules are configured to use ssh clone adress, so probably it's better to clone full repo using ssh.
 It might be impossible to clone full repo using https.
 
