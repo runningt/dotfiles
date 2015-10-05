@@ -19,3 +19,6 @@
 [submodule ".vim/bundle_all/ag.vim"]
 	path = .vim/bundle_all/ag.vim
 	url = git@github.com:rking/ag.vim.git
+[submodule ".vim/bundle_all/vim-sensible.git"]
+	path = .vim/bundle_all/vim-sensible.git
+	url = git://github.com/tpope/vim-sensible.git

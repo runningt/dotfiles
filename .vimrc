@@ -38,6 +38,8 @@ let g:ctrlp_open_multiple_files = 'tj'
 map <F4> :echo 'Current time is ' . strftime('%c')<Cr>
 vnoremap > >gv
 vnoremap < <gv
+nnoremap <F5> :Ag <cword><CR>
+vnoremap <F5> y:Ag <C-R>"<CR>
 
 syntax on
 
