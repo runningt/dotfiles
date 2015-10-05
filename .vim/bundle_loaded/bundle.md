@@ -1,4 +1,4 @@
-##Usage
+###Usage of bundle* directories
 
 `bubdle_all` directory contains *all* vim plugins installed 
 
