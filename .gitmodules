@@ -22,3 +22,6 @@
 [submodule ".vim/bundle_all/vim-sensible.git"]
 	path = .vim/bundle_all/vim-sensible.git
 	url = git://github.com/tpope/vim-sensible.git
+[submodule ".vim/bundle_all/vim-tmux-navigator"]
+	path = .vim/bundle_all/vim-tmux-navigator
+	url = git@github.com:christoomey/vim-tmux-navigator.git
