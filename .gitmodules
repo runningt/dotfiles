@@ -28,3 +28,6 @@
 [submodule ".vim/bundle_all/stackanswers.vim"]
 	path = .vim/bundle_all/stackanswers.vim
 	url = git@github.com:james9909/stackanswers.vim.git
+[submodule ".vim/bundle_all/vim-dirdiff"]
+	path = .vim/bundle_all/vim-dirdiff
+	url = git://github.com/will133/vim-dirdiff
