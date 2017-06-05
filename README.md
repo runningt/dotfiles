@@ -1,18 +1,18 @@
-##Dotfiles
+## Dotfiles
 
 My personal dotfiles. I heve created it to remember my settings, especially vim settings.
 
-###Requirements
+### Requirements
 
     * Vim>7
     * git 
 
-####Reccomended
+#### Reccomended
     * Vim >=7.4
     * git >=1.6.5
     * GNU make
 
-###Usage
+### Usage
 
 1. Clone repository:
     * In git 1.6.5 or higher
@@ -63,7 +63,7 @@ Or:
         ln -fs ../bundle_all/<module_to_enable>
 
 
-###Usage of bundle* directories
+### Usage of bundle* directories
 
 `bubdle_all` directory contains *all* vim plugins installed 
 
