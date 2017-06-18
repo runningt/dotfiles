@@ -1,4 +1,7 @@
-all:
+all: vim_links i3
+
+i3: 
+	ln -fs `pwd`/.i3 ~/.i3
 
 vim: vim_backup vim_links
 	
