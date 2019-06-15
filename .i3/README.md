@@ -1,2 +1,2 @@
 ### i3 wm config ###
-This is basic i3wm configuration file
+This is latest i3wm configuration file for my thinkpad 
