@@ -45,7 +45,8 @@ bindsym $mod+d exec dmenu_run
 # change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
-bindsym $mod+l focus up
+#bindsym $mod+l focus up
+#bindsym $mod+u focus up
 bindsym $mod+semicolon focus right
 
 # alternatively, you can use the cursor keys:
@@ -124,9 +125,28 @@ bindsym $mod+Shift+r restart
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 #by running.t
 bindsym $mod+Shift+e exec sh -c '[ $(echo -e "NO\nYES" | dmenu -sb "#ff6600" -i -p "Really exit i3 X session?") = "YES" ] && i3-msg exit'
+bindsym $mod+l exec sh -c '[ $(echo -e "NO\nYES" | dmenu -sb "#ff6600" -i -p "Really exit i3 X session?") = "YES" ] && i3-msg exit'
 
+bindsym $mod+b exec firefox
+bindsym $mod+m exec midori
+bindsym $mod+p exec pcmanfm
+bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
+bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
+bindsym XF86AudioMute exec pulseaudio-ctl mute 
+bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input
+bindsym XF86Display exec --no-startup-id i3-scrot
+bindsym --release Print exec --no-startup-id i3-scrot
+bindsym --release $mod+Print exec --no-startup-id "scrot -s '/home/running/Obrazy/Screenshots/%Y-%m-%d-%H%M%S_$wx$h_scrot.png'"
+bindsym --release $mod+XF86Display exec --no-startup-id "scrot -s '/home/running/Obrazy/Screenshots/%Y-%m-%d-%H%M%S_$wx$h_scrot.png'"
 bindsym Mod1+Control+BackSpace exit
 #bindsym $mod+Shift+v exec vivaldi
+bindsym $mod+F7 exec .screenlayout/rzutnik_hdmi.sh
+bindsym $mod+F8 exec .screenlayout/standard.sh
+
+#move containers between outputs
+bindsym $mod+u move container to output up
+bindsym $mod+Shift+u move workspace to output up
+
 workspace_layout tabbed
 
 # resize window (you can also use the mouse for that)
@@ -161,16 +181,21 @@ bar {
         status_command i3status
 }
 
-exec --no-startup-id wicd-gtk -t
+#exec --no-startup-id wicd-gtk -t
+exec --no-startup-id nm-applet
 #exec --no-startup-id pasystray
 exec_always --no-startup-id feh -q -z --slideshow-delay 1 --bg-scale ~/Obrazy/Wallpapers
 exec --no-startup-id synclient TouchpadOff=1
+exec --no-startup-id udiskie
 
 # Assign Workspaces:
 #workspace 1:terminal
 #workspace 2:web
+#workspace 3:file manager
 assign [class=".*[tT]erm.*"] 1
 assign [class="[tT]ilda"] 1
 assign [class="Firefox"] 2
 assign [class="Chromium"] 2
+assign [class="Midori"] 2
 #assign [class="Vivaldi"] 2
+assign [class="[pP]cmanfm"] 3
