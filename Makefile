@@ -1,7 +1,6 @@
+
 all: vim_links i3
 
-i3: 
-	ln -fs `pwd`/.i3 ~/.i3
 
 vim: vim_backup vim_links
 	
@@ -19,3 +18,6 @@ vim_enable_%:
 
 vim_disable_%:
 	cd .vim/bundle_loaded && make disable_$*
+
+i3:
+	cd .i3 && make 
