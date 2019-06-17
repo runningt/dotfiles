@@ -1,0 +1,10 @@
+#!/bin/bash
+case $BLOCK_BUTTON in
+  2) pulseaudio-ctl mute ;;  # middle click, mute/unmute
+  3) pulseaudio-ctl up;; # right click, increase
+  1) pulseaudio-ctl down ;; # leftclick, decrease
+  4) pulseaudio-ctl up;; # right click, increase
+  5) pulseaudio-ctl down ;; # leftclick, decrease
+esac
+
+pulseaudio-ctl full-status| awk '{print $(NF-2)"%";}'
