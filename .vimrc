@@ -23,6 +23,7 @@ call pathogen#helptags()
 filetype plugin indent on
 
 autocmd VimEnter * wincmd w
+au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_no_startup_for_diff = 1
 let g:nerdtree_tabs_smart_startup_focus=1
@@ -43,6 +44,7 @@ let g:stack_bottom=1
 "clear highlighting
 noremap <F3> :set hlsearch!<CR>
 "nnoremap <esc> :noh<return><esc>
+
 
 map <F4> :echo 'Current time is ' . strftime('%c')<Cr>
 map <F10> :!py.test -v % && sleep 1 \|\| sleep 2<CR><CR>

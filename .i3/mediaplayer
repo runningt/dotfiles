@@ -2,10 +2,13 @@
 
 if [ "$BLOCK_BUTTON" ==  "1" ]; then
     playerctl previous
+    sleep 1
 elif [ "$BLOCK_BUTTON" == "2" ]; then
     playerctl play-pause
+    sleep 1
 elif [ "$BLOCK_BUTTON" == "3" ]; then
     playerctl next
+    sleep 1
 fi
 playerctl metadata -f "{{artist}} - {{title}}"
 playerctl metadata -f "{{artist}} - {{title}}"

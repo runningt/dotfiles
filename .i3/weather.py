@@ -33,7 +33,7 @@ def get_weather_icon(name):
 
 
 #use your api key here or set is as env variable $OWM_API_KEY
-api_key = os.environ.get('OWM_API_KEY',None)
+api_key = os.environ.get('OWM_API_KEY', 'c6abf18609e7ac58f70acf1df6ca72fe')
 location = sys.argv[1] if len(sys.argv) > 1 else 'Krakow,PL'
 owm = pyowm.OWM(api_key)
 weather = owm.weather_at_place(location).get_weather()

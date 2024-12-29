@@ -5,7 +5,7 @@
 set $mod Mod4
 
 # set default desktop layout (default is tiling)
-workspace_layout tabbed 
+workspace_layout tabbed
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 new_window pixel 1
@@ -57,9 +57,9 @@ bindsym $mod+Ctrl+m exec pavucontrol
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 bindsym $mod+F2 exec palemoon
-bindsym $mod+F3 exec pcmanfm
+bindsym $mod+F3 exec spacefm
 # bindsym $mod+F3 exec ranger
-bindsym $mod+Shift+F3 exec gksu pcmanfm
+bindsym $mod+Shift+F3 exec gksu spacefm
 bindsym $mod+F5 exec terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill compton
 bindsym $mod+Ctrl+t exec --no-startup-id compton -b
@@ -80,18 +80,24 @@ bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
 bindsym XF86AudioMute exec pulseaudio-ctl mute 
 bindsym XF86AudioMicMute exec pulseaudio-ctl mute-input
 bindsym XF86Display exec --no-startup-id i3-scrot
-bindsym --release Print exec --no-startup-id i3-scrot
-bindsym --release $mod+Print exec --no-startup-id "scrot -s '/home/running/Obrazy/Screenshots/%Y-%m-%d-%H%M%S_$wx$h_scrot.png'"
-bindsym --release $mod+XF86Display exec --no-startup-id "scrot -s '/home/running/Obrazy/Screenshots/%Y-%m-%d-%H%M%S_$wx$h_scrot.png'"
+bindsym --release $mod+Shift+Print exec --no-startup-id i3-scrot -d 3
+bindsym --release $mod+Print exec --no-startup-id i3-scrot -s
+#bindsym --release $mod+XF86Display exec --no-startup-id i3-scrot -w
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioStop exec playerctl pause
 bindsym Mod1+Control+BackSpace exit
 #bindsym $mod+Shift+v exec vivaldi
-bindsym $mod+F7 exec .screenlayout/rzutnik_hdmi.sh
+bindsym $mod+F7 exec .screenlayout/monitor_vga.sh
 bindsym $mod+F8 exec .screenlayout/standard.sh
 
 #move containers between outputs
 bindsym $mod+u move container to output up
 bindsym $mod+Shift+u move workspace to output up
-
+bindsym $mod+greater move container to output right
+bindsym $mod+Shift+greater move workspace to output right
+#bindsym $mod+less move workspace to output 1
 
 # change focus
 bindsym $mod+j focus left
@@ -219,11 +225,12 @@ assign [class="[tT]ilda"] $ws1
 assign [class=".*[tT]erm.*"] $ws1
 assign [class="URxvt"] $ws1
 assign [class="[tT]ilda"] $ws1
-assign [class="Firefox"] $ws2
+assign [class="[Ff]irefox"] $ws2
 assign [class="Chromium"] $ws2
 assign [class="Vivaldi"] $ws2
 assign [class="Pale moon"] $ws2
 assign [class="[pP]cmanfm"] $ws3
+assign [class="[S]pacefm"] $ws3
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -321,17 +328,19 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 #exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_maia
+#running.t here is app responsible for text on desktop (disabling)
+# exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 10 -locker blurlock
+exec --no-startup-id xautolock -time 120 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
 #by running.t
-#exec --no-startup-id wicd-gtk -t
-#exec --no-startup-id pasystray
-#exec_always --no-startup-id feh -q -z --slideshow-delay 1 --bg-scale ~/Obrazy/Wallpapers
-#exec --no-startup-id synclient TouchpadOff=1
+# exec --no-startup-id wicd-gtk -t
+# exec --no-startup-id pasystray
+exec_always --no-startup-id feh -q -z  --bg-scale ~/Obrazy/Wallpapers/main*
+# exec_always --no-startup-id feh -q -z --slideshow-delay 1 --bg-scale ~/Obrazy/Wallpapers
+# exec --no-startup-id synclient TouchpadOff=1
 exec --no-startup-id xinput disable "SynPS/2 Synaptics TouchPad"
 exec --no-startup-id udiskie
 
